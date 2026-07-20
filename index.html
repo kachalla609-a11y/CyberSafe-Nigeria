@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberSafe Nigeria</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#eef3ff;
+color:#333;
+}
+
+.header{
+background:#071b52;
+padding:20px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+.header h1{
+color:#fff;
+margin-bottom:10px;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-weight:bold;
+transition:.3s;
+}
+
+.navbar a:hover{
+color:#00d9ff;
+}
+
+.hero{
+background:linear-gradient(135deg,#071b52,#123c8b);
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:38px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+background:#00d9ff;
+color:#071b52;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:white;
+transform:scale(1.05);
+}
+
+.services{
+padding:60px 20px;
+text-align:center;
+}
+
+.services h2{
+margin-bottom:30px;
+color:#071b52;
+}
+
+.card{
+background:white;
+max-width:700px;
+margin:20px auto;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#123c8b;
+}
+
+.about{
+padding:60px 20px;
+background:#dde8ff;
+text-align:center;
+}
+
+.about h2{
+margin-bottom:20px;
+color:#071b52;
+}
+
+.footer{
+background:#071b52;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+.footer p{
+margin:8px;
+}
+input{
+width:80%;
+max-width:400px;
+padding:15px;
+font-size:18px;
+border:2px solid #071b52;
+border-radius:10px;
+outline:none;
+}
+
+#result{
+margin-top:20px;
+font-size:22px;
+color:#071b52;
+}
+.card input[type=radio]{
+margin-right:8px;
+}
+
+#quizResult{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+}
+.dark{
+    background:#111;
+    color:white;
+}
+
+.dark .header{
+    background:#000;
+}
+
+.dark .hero{
+    background:#222;
+}
+
+.dark .card{
+    background:#333;
+    color:white;
+}
+
+.dark .about{
+    background:#222;
+}
+
+.dark .footer{
+    background:#000;
+}
+textarea{
+width:80%;
+max-width:400px;
+padding:15px;
+border:2px solid #071b52;
+border-radius:10px;
+font-size:16px;
+}
+.card:hover{
+transform:scale(1.03);
+transition:0.3s;
+}
+
+.services h2{
+margin-bottom:30px;
+font-size:32px;
+}
+.hero-image{
+width:250px;
+max-width:90%;
+margin:30px auto;
+display:block;
+border-radius:15px;
+}
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+padding:30px;
+}
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#071b52;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+font-size:25px;
+z-index:9999;
+}
+
+</style>
+
+</head>
+
+<body>
+    <img src="kiu.jpg"alt="Cyber Security" class="hero-image">
+    <div id="loader">
+    <h2>🛡 CyberSafe Nigeria</h2>
+    <p>Loading...</p>
+</div>
+
+<div id="content" style="display:none;">
+  
+
+<header class="header">
+
+<h1>CyberSafe Nigeria</h1>
+
+<nav class="navbar">
+
+<a href="#home">🏠 Home</a>
+
+<a href="#services">🛡 Services</a>
+
+<a href="#password">🔑 Password</a>
+
+<a href="#quiz">🧠 Quiz</a>
+
+<a href="#phishing">🎣 Phishing</a>
+
+<a href="#tips">💡 Tips</a>
+
+<a href="#threats">⚠ Threats</a>
+
+<a href="#stats">📊 Statistics</a>
+
+<a href="#contact">📞 Contact</a>
+
+</nav>
+
+<button class="btn" onclick="toggleMode()">🌙 Dark Mode</button>
+
+</header>
+
+<section class="hero" id="home">
+
+<h2>Protect Yourself From Cyber Threats</h2>
+
+<p>
+CyberSafe Nigeria is a cybersecurity awareness platform developed as a 3MTT Capstone Project. Our mission is to educate Nigerians about phishing, scamspassword security, and safe internet practices.
+</p>
+
+<button class="btn" onclick="welcome()">Get Started</button>
+
+</section>
+
+<section class="services" id="services">
+
+<h2>Our Services</h2>
+
+<div class="card">
+<h3>🛡 Cybersecurity Tips</h3>
+<p>Learn how to protect your accounts and personal information.</p>
+</div>
+
+<div class="card">
+<h3>🎣 Scam Awareness</h3>
+<p>Learn how to identify fake websites, emails and online scams.</p>
+</div>
+
+<div class="card">
+<h3>🔑 Password Security</h3>
+<p>Create stronger passwords to secure your online accounts.</p>
+</div>
+
+<div class="card">
+<h3>🧠 Cyber Quiz</h3>
+<p>Test your cybersecurity knowledge with interactive questions.</p>
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<h2>About This Project</h2>
+
+<p>
+This project was created by Mohammed Kachalla for the 3MTT Cybersecurity Programme to improve cybersecurity awareness across Nigeria.
+</p>
+
+</section>
+<section id="password" class="services">
+
+<h2>Password Strength Checker</h2>
+
+<input type="password" id="passwordInput" placeholder="Enter your password">
+
+<br><br>
+
+<button class="btn" onclick="checkPassword()">Check Password</button>
+
+<h3 id="result"></h3>
+
+</section>
+
+<section id="quiz" class="services">
+
+<h2>Cybersecurity Quiz</h2>
+
+<div class="card">
+
+<p><strong>1. Which password is the strongest?</strong></p>
+
+<input type="radio" name="q1" value="a"> 12345678<br><br>
+
+<input type="radio" name="q1" value="b"> password123<br><br>
+
+<input type="radio" name="q1" value="c"> M@rket#2026!<br><br>
+
+<button class="btn" onclick="checkQuiz()">Submit Quiz</button>
+
+<h3 id="quizResult"></h3>
+
+</div>
+
+</section>
+<section class="services" id="phishing">
+
+<h2>Phishing Email Detector</h2>
+
+<div class="card">
+
+<p><strong>Is this email Safe or Phishing?</strong></p>
+
+<p>
+<b>From:</b> support@paypaI.com<br>
+<b>Subject:</b> Your account has been suspended. Click the link below to verify immediately.
+</p>
+
+<button class="btn" onclick="safe()">Safe</button>
+
+<button class="btn" onclick="phishing()">Phishing</button>
+
+<h3 id="phishingResult"></h3>
+
+</div>
+
+</section>
+
+<h3 id="result"></h3>
+
+</section>
+<section class="services" id="tips">
+
+<h2>Cyber Safety Tips</h2>
+
+<div class="card">
+
+<p id="tip">
+Click the button below to receive a cybersecurity tip.
+</p>
+
+<button class="btn" onclick="showTip()">Show Tip</button>
+
+</div>
+
+</section>
+<section class="services" id="threats">
+
+<h2>Common Cyber Threats</h2>
+
+<div class="card">
+<h3>🎣 Phishing</h3>
+<p>Fake emails or websites designed to steal your personal information.</p>
+</div>
+
+<div class="card">
+<h3>🦠 Malware</h3>
+<p>Malicious software that can damage your device or steal your data.</p>
+</div>
+
+<div class="card">
+<h3>💰 Ransomware</h3>
+<p>A type of malware that locks your files until you pay a ransom.</p>
+</div>
+
+<div class="card">
+<h3>👤 Identity Theft</h3>
+<p>When criminals steal your personal information to commit fraud.</p>
+</div>
+
+</section>
+<section class="services" id="stats">
+
+<h2>Cybersecurity Awareness</h2>
+
+<div class="card">
+<h3 id="users">0</h3>
+<p>People Educated</p>
+</div>
+
+<div class="card">
+<h3 id="attacks">0</h3>
+<p>Cyber Attacks Prevented (Demo)</p>
+</div>
+
+<div class="card">
+<h3 id="tipsCount">0</h3>
+<p>Security Tips Shared</p>
+</div>
+
+<button class="btn" onclick="startCounter()">View Statistics</button>
+
+</section>
+<section class="services" id="login">
+
+<h2>Member Login</h2>
+
+<div class="card">
+
+<input type="text" id="username" placeholder="Username">
+
+<br><br>
+
+<input type="password" id="userpassword" placeholder="Password">
+
+<br><br>
+
+<button class="btn" onclick="login()">Login</button>
+
+<h3 id="loginResult"></h3>
+
+</div>
+
+</section>
+
+<section class="services" id="contact">
+
+<h2>Contact Us</h2>
+
+<div class="card">
+...
+</div>
+
+</section>
+
+</div>
+
+<footer class="footer">
+
+<p>© 2026 CyberSafe Nigeria</p>
+
+<p>Developed by Mohammed Kachalla</p>
+
+<p>3MTT Cybersecurity Capstone Project</p>
+
+</footer>
+
+<section class="services" id="contact">
+
+<h2>Contact Us</h2>
+
+<div class="card">
+
+<input type="text" id="name" placeholder="Enter your name">
+
+<br><br>
+
+<input type="email" id="email" placeholder="Enter your email">
+
+<br><br>
+
+<textarea id="message" placeholder="Type your message" rows="5" cols="30"></textarea>
+
+<br><br>
+
+<button class="btn" onclick="sendMessage()">Send Message</button>
+
+<h3 id="contactResult"></h3>
+
+
+  </div>
+
+    <script>
+        function welcome() {
+    alert("Welcome to CyberSafe Nigeria!\nStay Alert, Stay Secure.");
+}
+
+function checkPassword() {
+    let password = document.getElementById("passwordInput").value;
+    let result = document.getElementById("result");
+
+    if (password.length < 6) {
+        result.innerHTML = "❌ Weak Password";
+        result.style.color = "red";
+    } else if (password.length < 10) {
+        result.innerHTML = "⚠ Medium Password";
+        result.style.color = "orange";
+    } else {
+        result.innerHTML = "✅ Strong Password";
+        result.style.color = "green";
+    }
+}
+
+function checkQuiz() {
+    let answer = document.querySelector('input[name="q1"]:checked');
+    let result = document.getElementById("quizResult");
+
+    if (answer == null) {
+        result.innerHTML = "⚠ Please select an answer.";
+        result.style.color = "orange";
+        return;
+    }
+
+    if (answer.value == "c") {
+        result.innerHTML = "🎉 Correct!<br><br>🏆 Cyber Safety Score: 100%";
+        result.style.color = "green";
+    } else {
+        result.innerHTML = "❌ Incorrect.<br><br>🏆 Cyber Safety Score: 40%";
+        result.style.color = "red";
+    }
+}
+
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+
+function safe() {
+    document.getElementById("phishingResult").innerHTML = "❌ Incorrect. This email is suspicious.";
+    document.getElementById("phishingResult").style.color = "red";
+}
+
+function phishing() {
+    document.getElementById("phishingResult").innerHTML = "✅ Correct! This is a phishing email.";
+    document.getElementById("phishingResult").style.color = "green";
+}
+
+function sendMessage() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let result = document.getElementById("contactResult");
+
+    if (name == "" || email == "" || message == "") {
+        result.innerHTML = "❌ Please fill in all fields.";
+        result.style.color = "red";
+    } else {
+        result.innerHTML = "✅ Message sent successfully!";
+        result.style.color = "green";
+    }
+}
+
+function showTip() {
+    let tips = [
+        "🔐 Use a strong password with letters, numbers and symbols.",
+        "📱 Enable Two-Factor Authentication (2FA).",
+        "🎣 Never click suspicious links in emails or messages.",
+        "💻 Keep your phone and computer updated.",
+        "📶 Avoid entering passwords on public Wi-Fi.",
+        "🛡 Install trusted antivirus software.",
+        "👤 Never share your OTP or banking PIN.",
+        "📧 Verify the sender before opening email attachments."
+    ];
+
+    let random = Math.floor(Math.random() * tips.length);
+    document.getElementById("tip").innerHTML = tips[random];
+}
+
+function startCounter() {
+    document.getElementById("users").innerHTML = "1,500+";
+    document.getElementById("attacks").innerHTML = "350+";
+    document.getElementById("tipsCount").innerHTML = "120+";
+}
+
+function login() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("userpassword").value;
+    let result = document.getElementById("loginResult");
+
+    if (username == "admin" && password == "12345") {
+        result.innerHTML = "✅ Login Successful";
+        result.style.color = "green";
+    } else {
+        result.innerHTML = "❌ Invalid Username or Password";
+        result.style.color = "red";
+    }
+}
+
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }, 2000);
+};
+
+
+</script>
+
+
+
+
+</body>
+</html>
